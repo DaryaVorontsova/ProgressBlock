@@ -8,6 +8,7 @@
     "lint:js": "eslint . --ext .js --fix",
     "lint:scss": "stylelint \"**/*.scss\" --fix",
     "format": "prettier --write .",
+    "build": "mkdir -p dist/js && cp index.html dist/ && cp -r js/* dist/js/ && npx sass styles/progress.scss dist/style.css",
     "deploy": "gh-pages -d ."
   },
   "keywords": [],
