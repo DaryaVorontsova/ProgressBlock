@@ -8,7 +8,7 @@
     "lint:js": "eslint . --ext .js --fix",
     "lint:scss": "stylelint \"**/*.scss\" --fix",
     "format": "prettier --write .",
-    "build": "mkdir -p dist/js && cp index.html dist/ && cp -r js/* dist/js/ && npx sass styles/progress.scss dist/style.css",
+    "build": "npx shx mkdir -p dist/js && npx shx cp index.html dist/ && npx shx cp -r js dist/js && npx sass styles/progress.scss dist/style.css",
     "deploy": "gh-pages -d dist"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "gh-pages": "^6.3.0",
     "prettier": "^3.5.3",
     "sass": "^1.89.0",
+    "shx": "^0.4.0",
     "stylelint": "^16.19.1",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-config-standard-scss": "^15.0.1",
