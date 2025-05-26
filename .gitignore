@@ -1,0 +1,12 @@
+node_modules/
+.vscode/
+.DS_Store
+Thumbs.db
+
+style.css
+style.css.map
+
+dist/
+build/
+.env
+
