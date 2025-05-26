@@ -1,0 +1,303 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress__svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+  display: block;
+  margin: 20px auto;
+}
+.progress__svg circle {
+  fill: none;
+  stroke-width: 12px;
+}
+.progress__svg .progress__background {
+  stroke: #eee;
+}
+.progress__svg .progress__main {
+  stroke: #1577ff;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.page-header__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(-40px);
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+#progress__block {
+  transition: all 0.4s ease;
+}
+
+.animated {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(270deg);
+  }
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+@media (orientation: landscape) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.controls__form {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  gap: 10px;
+}
+
+.controls__group {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.controls__group label {
+  color: #000;
+  font-size: 1rem;
+}
+
+.controls__group input[type=number] {
+  width: 40px;
+  height: 25px;
+  padding: 0 6px;
+  text-align: center;
+  border: 1px solid #000;
+  border-radius: 16px;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+}
+.controls__group input[type=number]::-webkit-inner-spin-button, .controls__group input[type=number]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.controls__group input[type=number]:focus-visible {
+  border-color: #1577ff;
+  box-shadow: 0 0 0 2px rgba(21, 119, 255, 0.3);
+}
+.controls__group input[type=number]:hover {
+  border-color: #555;
+}
+
+.controls__group input[type=checkbox] {
+  appearance: none;
+  width: 38px;
+  height: 24px;
+  background: #eee;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  margin: 0 1px;
+  transition: background 0.3s ease;
+}
+.controls__group input[type=checkbox]::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+}
+.controls__group input[type=checkbox]:checked {
+  background: #1577ff;
+}
+.controls__group input[type=checkbox]:checked::before {
+  transform: translateX(14px);
+}
+.controls__group input[type=checkbox]:checked:hover {
+  background: rgb(0, 94.2307692308, 225);
+}
+.controls__group input[type=checkbox]:hover {
+  background: rgb(212.5, 212.5, 212.5);
+}
+.controls__group input[type=checkbox]:focus-visible {
+  box-shadow: 0 0 0 2px rgba(21, 119, 255, 0.4);
+}
+
+/*# sourceMappingURL=style.css.map */

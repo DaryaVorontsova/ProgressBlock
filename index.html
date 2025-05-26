@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Block</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1 class="page-header__title">Progress</h1>
+    </header>
+    <main class="container">
+      <section class="progress">
+        <div id="progress__block">
+          <svg viewBox="0 0 120 120" class="progress__svg">
+            <circle class="progress__background" cx="60" cy="60" r="54" />
+            <circle class="progress__main" cx="60" cy="60" r="54" />
+          </svg>
+        </div>
+      </section>
+
+      <section class="controls">
+        <form class="controls__form" id="progress-form">
+          <div class="controls__group">
+            <label for="value-input">Value</label>
+            <input
+              type="number"
+              id="value-input"
+              name="value"
+              min="0"
+              max="100"
+              step="1"
+              required
+            />
+          </div>
+
+          <div class="controls__group">
+            <label for="animate-toggle">Animate</label>
+            <input type="checkbox" id="animate-toggle" name="animate" />
+          </div>
+
+          <div class="controls__group">
+            <label for="hide-toggle">Hide</label>
+            <input type="checkbox" id="hide-toggle" name="hide" />
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
