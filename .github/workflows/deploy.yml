@@ -1,19 +1,26 @@
-name: Lint, Build & Deploy
+name: Lint, Build & Deploy Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
+permissions:
+  contents: read    
+  pages: write       
+  id-token: write  
 
 jobs:
   pages:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Setup Node.js 20.x
         uses: actions/setup-node@v3
         with:
           node-version: '20'
@@ -30,16 +37,20 @@ jobs:
       - name: Format code
         run: npm run format
 
-      - name: Build project
-        run: npm run build
+      - name: Build site
+        run: |
+          mkdir -p dist/js
+          cp index.html dist/
+          cp -r js/* dist/js/
+          npx sass styles/progress.scss dist/style.css
 
-      - name: Configure Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
-      - name: Deploy to Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
