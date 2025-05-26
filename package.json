@@ -9,13 +9,14 @@
     "lint:scss": "stylelint \"**/*.scss\" --fix",
     "format": "prettier --write .",
     "build": "mkdir -p dist/js && cp index.html dist/ && cp -r js/* dist/js/ && npx sass styles/progress.scss dist/style.css",
-    "deploy": "gh-pages -d ."
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^9.27.0",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.5.3",
     "sass": "^1.89.0",
     "stylelint": "^16.19.1",
