@@ -7,7 +7,8 @@
     "scss": "sass styles/progress.scss style.css --watch",
     "lint:js": "eslint . --ext .js --fix",
     "lint:scss": "stylelint \"**/*.scss\" --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "deploy": "gh-pages -d ."
   },
   "keywords": [],
   "author": "",
