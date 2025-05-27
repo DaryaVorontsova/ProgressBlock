@@ -6,11 +6,15 @@ const hideToggle = document.getElementById('hide-toggle');
 const animateToggle = document.getElementById('animate-toggle');
 
 input.addEventListener('input', (e) => {
-  const val = e.target.valueAsNumber;
+  let val = e.target.valueAsNumber;
   if (e.target.value === '' || Number.isNaN(val)) {
     block.setValue(0);
     return;
   }
+
+  val = Math.min(100, Math.max(0, val));
+  input.value = val;
+
   block.setValue(val);
 });
 
